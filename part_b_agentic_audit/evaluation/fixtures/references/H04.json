@@ -1,0 +1,31 @@
+{
+ "case_id": "H04",
+ "issues": [
+  {
+   "code": "EVIDENCE_POSTHOC",
+   "target": ""
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "span_valid_rate"
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "substring_support_rate"
+  },
+  {
+   "code": "OFFSETS_NOT_IN_SOURCE",
+   "target": ""
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H04",
+  "seed": 104,
+  "n_notes": 70,
+  "evidence_mode": "posthoc",
+  "med_impl": "null_na",
+  "view_reordered": true
+ }
+}

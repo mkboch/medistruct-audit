@@ -1,0 +1,24 @@
+{
+ "case_id": "H05",
+ "issues": [
+  {
+   "code": "HETEROGENEOUS_RUN_SETTINGS",
+   "target": ""
+  },
+  {
+   "code": "MISSING_RUN_METADATA",
+   "target": ""
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H05",
+  "seed": 105,
+  "n_notes": 80,
+  "evidence_mode": "model",
+  "med_impl": "null_na",
+  "hetero_frac": 0.15,
+  "hetero_documented": false
+ }
+}

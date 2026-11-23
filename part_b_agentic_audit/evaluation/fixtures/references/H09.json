@@ -1,0 +1,14 @@
+{
+ "case_id": "H09",
+ "issues": [],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H09",
+  "seed": 109,
+  "n_notes": 70,
+  "evidence_mode": "model",
+  "med_impl": "null_na",
+  "n_fail": 2
+ }
+}

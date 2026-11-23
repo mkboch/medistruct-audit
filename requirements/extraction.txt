@@ -1,0 +1,6 @@
+# Part A client side (pinned from the historical extraction virtualenv)
+jsonschema==4.26.0
+openai==2.26.0
+pandas==3.0.1
+requests==2.32.5
+pytest==9.2.0

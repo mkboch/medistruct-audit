@@ -1,0 +1,30 @@
+You are extracting a structured clinical report from a discharge-style note that contains explicit bullet lists.
+
+Return ONLY valid JSON:
+
+{
+  "symptoms": [string, ...],
+  "diagnoses": [string, ...],
+  "medications": [string, ...],
+  "assessment_summary": string,
+  "evidence": []
+}
+
+Rules:
+- VALID JSON only.
+- Arrays are arrays of strings.
+- Evidence must be [].
+
+Extraction rule (IMPORTANT):
+- Medications MUST be exactly the bullet lines under "DISCHARGE MEDICATIONS:".
+- Diagnoses MUST be exactly the bullet lines under "DIAGNOSES:".
+- Symptoms MUST be exactly the bullet lines under "SYMPTOMS:".
+
+Limits (high caps for deterministic round-trip):
+- symptoms: at most 20
+- diagnoses: at most 30
+- medications: at most 40
+- assessment_summary: at most 3 sentences (<= 600 chars)
+
+NOTE_TEXT:
+<<<NOTE_TEXT>>>

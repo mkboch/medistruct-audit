@@ -1,0 +1,28 @@
+You are extracting a structured clinical report from a DISCHARGE SUMMARY.
+
+Return ONLY a single JSON object that follows this schema exactly:
+
+{
+  "symptoms": [string, ...],
+  "diagnoses": [string, ...],
+  "medications": [string, ...],
+  "assessment_summary": string,
+  "evidence": []
+}
+
+Rules:
+- Output must be VALID JSON (no markdown, no commentary).
+- Arrays must be arrays of strings (not dicts, not nested objects).
+
+STRICT OUTPUT LIMITS (round-trip extraction):
+- symptoms: at most 12 items
+- diagnoses: at most 15 items
+- medications: at most 20 items
+- assessment_summary: at most 3 sentences (<= 500 characters)
+
+EVIDENCE:
+- Set "evidence" to an EMPTY LIST: "evidence": []
+- Do NOT include any evidence objects.
+
+NOTE_TEXT:
+<<<NOTE_TEXT>>>

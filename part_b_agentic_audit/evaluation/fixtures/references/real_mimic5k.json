@@ -1,0 +1,55 @@
+{
+ "case_id": "real_mimic5k",
+ "derivation": "manual audit 2026-11-22 (AUDIT_REPORT.md), rule-checked",
+ "unverifiable_claims": [],
+ "issues": [
+  {
+   "code": "CLAIM_NOT_REPRODUCED",
+   "target": "C10"
+  },
+  {
+   "code": "CLAIM_NOT_REPRODUCED",
+   "target": "C12"
+  },
+  {
+   "code": "MIXED_DENOMINATORS",
+   "target": ""
+  },
+  {
+   "code": "EVIDENCE_POSTHOC",
+   "target": ""
+  },
+  {
+   "code": "EVIDENCE_CAP_LIMITS_COVERAGE",
+   "target": ""
+  },
+  {
+   "code": "OFFSETS_NOT_IN_SOURCE",
+   "target": ""
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "span_valid_rate"
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "substring_support_rate"
+  },
+  {
+   "code": "ZERO_FILLED_DENOMINATOR",
+   "target": "med_section_alignment_rate"
+  },
+  {
+   "code": "HETEROGENEOUS_RUN_SETTINGS",
+   "target": ""
+  },
+  {
+   "code": "MISSING_RUN_METADATA",
+   "target": ""
+  },
+  {
+   "code": "FAILURES_CLUSTERED",
+   "target": ""
+  }
+ ]
+}

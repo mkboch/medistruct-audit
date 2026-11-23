@@ -1,0 +1,35 @@
+You are given a structured clinical report (JSON). Write a discharge-style clinical note that is faithful to the JSON.
+
+ABSOLUTE REQUIREMENTS:
+- Output plain text only (no JSON, no markdown).
+- Do NOT invent new symptoms/diagnoses/medications not present in the JSON.
+- Do NOT drop any items.
+
+CRITICAL COUNT CHECK:
+- If the JSON has N medications, you MUST output exactly N bullet lines under DISCHARGE MEDICATIONS (one per medication), preserving each medication string EXACTLY.
+
+FORMAT (must follow exactly):
+
+CHIEF COMPLAINT:
+<one short line>
+
+SYMPTOMS:
+- <symptom item 1 EXACTLY>
+- <symptom item 2 EXACTLY>
+...
+
+DIAGNOSES:
+- <diagnosis item 1 EXACTLY>
+- <diagnosis item 2 EXACTLY>
+...
+
+DISCHARGE MEDICATIONS:
+- <medication item 1 EXACTLY>
+- <medication item 2 EXACTLY>
+...
+
+ASSESSMENT SUMMARY:
+<exactly 2 short sentences, <= 260 characters total. Do not include medication lists here.>
+
+JSON_REPORT:
+<<<JSON_REPORT>>>

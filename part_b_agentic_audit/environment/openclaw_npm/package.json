@@ -1,0 +1,1 @@
+{ "name": "agentic-audit-openclaw-env", "private": true, "dependencies": { "openclaw": "2026.11.6" }, "allowScripts": { "openclaw": true } }

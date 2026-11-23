@@ -1,0 +1,20 @@
+{
+ "case_id": "H14",
+ "issues": [
+  {
+   "code": "FAILURES_CLUSTERED",
+   "target": ""
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H14",
+  "seed": 114,
+  "n_notes": 80,
+  "evidence_mode": "model",
+  "med_impl": "null_na",
+  "n_fail": 5,
+  "fail_clustered": true
+ }
+}

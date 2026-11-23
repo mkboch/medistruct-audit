@@ -1,0 +1,208 @@
+{
+ "version": "1.0.0",
+ "tasks": [
+  {
+   "task_id": "T01",
+   "case_id": "H01",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H01. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T02",
+   "case_id": "H02",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H02. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T03",
+   "case_id": "H03",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H03. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T04",
+   "case_id": "H04",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H04. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T05",
+   "case_id": "H05",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H05. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T06",
+   "case_id": "H06",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H06. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T07",
+   "case_id": "H07",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H07. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T08",
+   "case_id": "H08",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H08. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T09",
+   "case_id": "H09",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H09. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T10",
+   "case_id": "H10",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H10. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T11",
+   "case_id": "H11",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H11. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T12",
+   "case_id": "H12",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H12. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T13",
+   "case_id": "H13",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H13. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T14",
+   "case_id": "H14",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H14. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T15",
+   "case_id": "H15",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H15. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T16",
+   "case_id": "H16",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H16. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T17",
+   "case_id": "H17",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H17. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T18",
+   "case_id": "H18",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case H18. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "T19",
+   "case_id": "H01",
+   "scope": "med_alignment",
+   "split": "heldout",
+   "instruction": "For case H01, investigate whether the reported medication section alignment result is reliable."
+  },
+  {
+   "task_id": "T20",
+   "case_id": "H04",
+   "scope": "evidence",
+   "split": "heldout",
+   "instruction": "For case H04, investigate whether the evidence spans and the evidence-based metrics (span validity, coverage, substring support) can be interpreted as evidence of model faithfulness to the source note."
+  },
+  {
+   "task_id": "T21",
+   "case_id": "H07",
+   "scope": "claims",
+   "split": "heldout",
+   "instruction": "For case H07, check whether each reported quantitative claim is reproducible from the saved artifacts, and explain any discrepancy."
+  },
+  {
+   "task_id": "T22",
+   "case_id": "H08",
+   "scope": "claims",
+   "split": "heldout",
+   "instruction": "For case H08, check whether each reported quantitative claim is reproducible from the saved artifacts, and explain any discrepancy."
+  },
+  {
+   "task_id": "T23",
+   "case_id": "H16",
+   "scope": "med_alignment",
+   "split": "heldout",
+   "instruction": "For case H16, investigate whether the reported medication section alignment result is reliable."
+  },
+  {
+   "task_id": "T24",
+   "case_id": "H02",
+   "scope": "evidence",
+   "split": "heldout",
+   "instruction": "For case H02, investigate whether the evidence spans and the evidence-based metrics (span validity, coverage, substring support) can be interpreted as evidence of model faithfulness to the source note."
+  },
+  {
+   "task_id": "T25",
+   "case_id": "H12",
+   "scope": "provenance",
+   "split": "heldout",
+   "instruction": "For case H12, assess whether the run is fully documented and internally consistent (run settings, run metadata, receipt integrity, and failure patterns)."
+  },
+  {
+   "task_id": "T26",
+   "case_id": "H14",
+   "scope": "provenance",
+   "split": "heldout",
+   "instruction": "For case H14, assess whether the run is fully documented and internally consistent (run settings, run metadata, receipt integrity, and failure patterns)."
+  },
+  {
+   "task_id": "T27",
+   "case_id": "H03",
+   "scope": "med_alignment",
+   "split": "heldout",
+   "instruction": "For case H03, investigate whether the reported medication section alignment result is reliable."
+  },
+  {
+   "task_id": "T28",
+   "case_id": "H15",
+   "scope": "claims",
+   "split": "heldout",
+   "instruction": "For case H15, check whether each reported quantitative claim is reproducible from the saved artifacts, and explain any discrepancy."
+  },
+  {
+   "task_id": "T29",
+   "case_id": "real_mgh10",
+   "scope": "full",
+   "split": "heldout",
+   "instruction": "Audit case real_mgh10. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  }
+ ]
+}

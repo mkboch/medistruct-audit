@@ -1,0 +1,26 @@
+# Never commit data or run outputs
+data_local/
+Dataset/
+Outputs/
+*.csv.gz
+*.jsonl
+*.parquet
+*.log
+part_b_agentic_audit/configs/cases.json
+part_b_agentic_audit/evaluation/fixtures/cases/
+part_b_agentic_audit/evaluation/tasks/BUILD_MANIFEST.json
+part_b_agentic_audit/runs/**/trial*/
+part_b_agentic_audit/runs/**/scores_runs.csv
+part_b_agentic_audit/runs/cache/
+part_b_agentic_audit/environment/vllm_home/
+part_b_agentic_audit/environment/.venv/
+part_b_agentic_audit/environment/openclaw_npm/node_modules/
+# Environments, caches, secrets
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.env.*
+*.pem
+*.key

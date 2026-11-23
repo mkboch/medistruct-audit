@@ -1,0 +1,13 @@
+{
+ "case_id": "dev_syn_b",
+ "issues": [],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "dev_syn_b",
+  "seed": 12,
+  "n_notes": 60,
+  "evidence_mode": "model",
+  "med_impl": "null_na"
+ }
+}

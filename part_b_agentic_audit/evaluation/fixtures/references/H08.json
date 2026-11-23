@@ -1,0 +1,49 @@
+{
+ "case_id": "H08",
+ "issues": [
+  {
+   "code": "MIXED_DENOMINATORS",
+   "target": ""
+  },
+  {
+   "code": "EVIDENCE_POSTHOC",
+   "target": ""
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "span_valid_rate"
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "substring_support_rate"
+  },
+  {
+   "code": "EVIDENCE_CAP_LIMITS_COVERAGE",
+   "target": ""
+  },
+  {
+   "code": "OFFSETS_NOT_IN_SOURCE",
+   "target": ""
+  },
+  {
+   "code": "ZERO_FILLED_DENOMINATOR",
+   "target": "med_section_alignment_rate"
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H08",
+  "seed": 108,
+  "n_notes": 80,
+  "evidence_mode": "posthoc",
+  "cap_total": 8,
+  "cap_meds": 3,
+  "med_impl": "zero_fill",
+  "n_fail": 3,
+  "all_records_convention": [
+   "mean_coverage",
+   "mean_evidence_count"
+  ]
+ }
+}

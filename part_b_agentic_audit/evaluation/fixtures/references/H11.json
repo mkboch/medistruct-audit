@@ -1,0 +1,33 @@
+{
+ "case_id": "H11",
+ "issues": [
+  {
+   "code": "EVIDENCE_POSTHOC",
+   "target": ""
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "span_valid_rate"
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "substring_support_rate"
+  },
+  {
+   "code": "EVIDENCE_CAP_LIMITS_COVERAGE",
+   "target": ""
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H11",
+  "seed": 111,
+  "n_notes": 70,
+  "evidence_mode": "posthoc",
+  "cap_total": 12,
+  "cap_meds": 4,
+  "med_impl": "null_na",
+  "view_reordered": false
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "case_id": "H07",
+ "issues": [
+  {
+   "code": "CLAIM_NOT_REPRODUCED",
+   "target": "C09"
+  },
+  {
+   "code": "MISSING_ARTIFACT",
+   "target": "roundtrip_csv"
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [
+  "C10",
+  "C11",
+  "C12"
+ ],
+ "knobs": {
+  "case_id": "H07",
+  "seed": 107,
+  "n_notes": 60,
+  "evidence_mode": "model",
+  "med_impl": "null_na",
+  "drop_roundtrip": true,
+  "perturb_claims": [
+   "gold_micro_f1_medications",
+   "roundtrip_jaccard_symptoms"
+  ]
+ }
+}

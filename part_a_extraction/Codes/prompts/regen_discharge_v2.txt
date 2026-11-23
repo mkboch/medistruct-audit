@@ -1,0 +1,11 @@
+You will be given a structured JSON report from a discharge summary.
+
+Regenerate a discharge-style unstructured note that preserves ALL clinical content in the JSON.
+
+Constraints:
+- Plain text only.
+- Use compact sections: Chief Complaint, HPI, Hospital Course, Discharge Diagnoses, Discharge Medications, Instructions.
+- Ensure every symptom/diagnosis/medication from JSON is explicitly mentioned.
+
+JSON_REPORT:
+<<<STRUCTURED_JSON>>>

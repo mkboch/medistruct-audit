@@ -1,0 +1,14 @@
+You will be given a structured JSON report extracted from a discharge summary.
+
+Task:
+Regenerate an unstructured discharge-style note that preserves ALL clinical content in the JSON,
+using concise, sectioned text.
+
+Constraints:
+- Output plain text only.
+- Keep it compact but complete.
+- Make sure every symptom/diagnosis/medication from JSON is explicitly mentioned in the regenerated note.
+- Include short sections with clear labels.
+
+JSON REPORT:
+<<<STRUCTURED_JSON>>>

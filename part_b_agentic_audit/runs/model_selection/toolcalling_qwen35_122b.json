@@ -1,0 +1,367 @@
+{
+ "port": "8097",
+ "model": "qwen35-test",
+ "n": 5,
+ "results": {
+  "chat": {
+   "pass_rate": 1.0,
+   "trials": [
+    {
+     "ok": true,
+     "info": {
+      "content": "\n\nREADY",
+      "has_reasoning": true
+     },
+     "s": 3.65
+    },
+    {
+     "ok": true,
+     "info": {
+      "content": "\n\nREADY",
+      "has_reasoning": true
+     },
+     "s": 1.33
+    },
+    {
+     "ok": true,
+     "info": {
+      "content": "\n\nREADY",
+      "has_reasoning": true
+     },
+     "s": 1.05
+    },
+    {
+     "ok": true,
+     "info": {
+      "content": "\n\nREADY",
+      "has_reasoning": true
+     },
+     "s": 1.3
+    },
+    {
+     "ok": true,
+     "info": {
+      "content": "\n\nREADY",
+      "has_reasoning": true
+     },
+     "s": 0.75
+    }
+   ]
+  },
+  "required_tool_call": {
+   "pass_rate": 0.8,
+   "trials": [
+    {
+     "ok": false,
+     "info": "exception: HTTPError: HTTP Error 500: Internal Server Error",
+     "s": 1.16
+    },
+    {
+     "ok": true,
+     "info": [
+      {
+       "name": "get_metric",
+       "arguments": "{\"name\": \"coverage\"}"
+      }
+     ],
+     "s": 0.57
+    },
+    {
+     "ok": true,
+     "info": [
+      {
+       "name": "get_metric",
+       "arguments": "{\"name\": \"coverage\"}"
+      }
+     ],
+     "s": 0.69
+    },
+    {
+     "ok": true,
+     "info": [
+      {
+       "name": "get_metric",
+       "arguments": "{\"name\": \"coverage\"}"
+      }
+     ],
+     "s": 0.62
+    },
+    {
+     "ok": true,
+     "info": [
+      {
+       "name": "get_metric",
+       "arguments": "{\"name\": \"coverage\"}"
+      }
+     ],
+     "s": 0.6
+    }
+   ]
+  },
+  "auto_tool_selection_and_args": {
+   "pass_rate": 1.0,
+   "trials": [
+    {
+     "ok": true,
+     "info": {
+      "name": "count_records",
+      "arguments": "{\"split\": \"failed\", \"include_malformed\": false}"
+     },
+     "s": 0.93
+    },
+    {
+     "ok": true,
+     "info": {
+      "name": "count_records",
+      "arguments": "{\"split\": \"failed\", \"include_malformed\": false}"
+     },
+     "s": 0.9
+    },
+    {
+     "ok": true,
+     "info": {
+      "name": "count_records",
+      "arguments": "{\"split\": \"failed\", \"include_malformed\": false}"
+     },
+     "s": 0.93
+    },
+    {
+     "ok": true,
+     "info": {
+      "name": "count_records",
+      "arguments": "{\"split\": \"failed\", \"include_malformed\": false}"
+     },
+     "s": 0.79
+    },
+    {
+     "ok": true,
+     "info": {
+      "name": "count_records",
+      "arguments": "{\"split\": \"failed\", \"include_malformed\": false}"
+     },
+     "s": 1.17
+    }
+   ]
+  },
+  "no_tool_when_unnecessary": {
+   "pass_rate": 1.0,
+   "trials": [
+    {
+     "ok": true,
+     "info": {
+      "tool_calls": false,
+      "content": "\n\nThe answer is 5."
+     },
+     "s": 0.71
+    },
+    {
+     "ok": true,
+     "info": {
+      "tool_calls": false,
+      "content": "\n\n2 + 3 equals 5."
+     },
+     "s": 0.53
+    },
+    {
+     "ok": true,
+     "info": {
+      "tool_calls": false,
+      "content": "\n\n5"
+     },
+     "s": 0.49
+    },
+    {
+     "ok": true,
+     "info": {
+      "tool_calls": false,
+      "content": "\n\n5"
+     },
+     "s": 0.6
+    },
+    {
+     "ok": true,
+     "info": {
+      "tool_calls": false,
+      "content": "\n\n5"
+     },
+     "s": 0.59
+    }
+   ]
+  },
+  "multi_step_sequence": {
+   "pass_rate": 1.0,
+   "trials": [
+    {
+     "ok": true,
+     "info": {
+      "called": [
+       "get_metric",
+       "count_records"
+      ],
+      "final": "\n\nThe coverage metric is 0.5767, and the number of valid records (excluding malformed) is 4994."
+     },
+     "s": 1.43
+    },
+    {
+     "ok": true,
+     "info": {
+      "called": [
+       "get_metric",
+       "count_records"
+      ],
+      "final": "\n\nThe coverage metric is 0.5767, and the number of valid records (excluding malformed) is 4994."
+     },
+     "s": 1.64
+    },
+    {
+     "ok": true,
+     "info": {
+      "called": [
+       "get_metric",
+       "count_records"
+      ],
+      "final": "\n\nHere are the numbers you requested:\n\n- **Coverage metric**: 0.5767\n- **Valid records (excluding malformed)**: 4994"
+     },
+     "s": 2.1
+    },
+    {
+     "ok": true,
+     "info": {
+      "called": [
+       "get_metric",
+       "count_records"
+      ],
+      "final": "\n\nHere are the requested numbers:\n\n- **Coverage metric**: 0.5767\n- **Valid records (excluding malformed)**: 4994"
+     },
+     "s": 1.98
+    },
+    {
+     "ok": true,
+     "info": {
+      "called": [
+       "get_metric",
+       "count_records"
+      ],
+      "final": "\n\nThe coverage metric is 0.5767, and the number of valid records (excluding malformed) is 4994."
+     },
+     "s": 1.59
+    }
+   ]
+  },
+  "tool_error_no_fabrication": {
+   "pass_rate": 1.0,
+   "trials": [
+    {
+     "ok": true,
+     "info": "\n\nit seems i was unable to retrieve the metric named 'coverage' because the metric store is currently unavailable. please try again later.",
+     "s": 0.92
+    },
+    {
+     "ok": true,
+     "info": "\n\ni'm sorry, but i was unable to retrieve the metric named 'coverage' because the metric store is currently unavailable.",
+     "s": 0.88
+    },
+    {
+     "ok": true,
+     "info": "\n\ni am unable to retrieve the metric named 'coverage' because the metric store is currently unavailable.",
+     "s": 0.96
+    },
+    {
+     "ok": true,
+     "info": "\n\ni am unable to retrieve the 'coverage' metric because the metric store is currently unavailable.",
+     "s": 0.86
+    },
+    {
+     "ok": true,
+     "info": "\n\nthe metric store appears to be unavailable, so i cannot retrieve the 'coverage' metric at this moment.",
+     "s": 1.0
+    }
+   ]
+  },
+  "streaming_tool_call": {
+   "pass_rate": 1.0,
+   "trials": [
+    {
+     "ok": true,
+     "info": {
+      "names": [
+       "get_metric"
+      ],
+      "args": "{\"name\": \"coverage\"}"
+     },
+     "s": 0.94
+    },
+    {
+     "ok": true,
+     "info": {
+      "names": [
+       "get_metric"
+      ],
+      "args": "{\"name\": \"coverage\"}"
+     },
+     "s": 0.74
+    },
+    {
+     "ok": true,
+     "info": {
+      "names": [
+       "get_metric"
+      ],
+      "args": "{\"name\": \"coverage\"}"
+     },
+     "s": 0.81
+    },
+    {
+     "ok": true,
+     "info": {
+      "names": [
+       "get_metric"
+      ],
+      "args": "{\"name\": \"coverage\"}"
+     },
+     "s": 0.83
+    },
+    {
+     "ok": true,
+     "info": {
+      "names": [
+       "get_metric"
+      ],
+      "args": "{\"name\": \"coverage\"}"
+     },
+     "s": 0.64
+    }
+   ]
+  },
+  "client_timeout_handling": {
+   "pass_rate": 1.0,
+   "trials": [
+    {
+     "ok": true,
+     "info": "TimeoutError",
+     "s": 2.0
+    },
+    {
+     "ok": true,
+     "info": "TimeoutError",
+     "s": 2.0
+    },
+    {
+     "ok": true,
+     "info": "TimeoutError",
+     "s": 2.0
+    },
+    {
+     "ok": true,
+     "info": "TimeoutError",
+     "s": 2.0
+    },
+    {
+     "ok": true,
+     "info": "TimeoutError",
+     "s": 2.0
+    }
+   ]
+  }
+ }
+}

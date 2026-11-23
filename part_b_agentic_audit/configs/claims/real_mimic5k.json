@@ -1,0 +1,96 @@
+{
+ "source": "Historical manuscript Table 1 (Medi_Struct_PNAS draft)",
+ "claims": [
+  {
+   "claim_id": "C01",
+   "text": "5k schema-valid outputs",
+   "metric_key": "schema_valid_count",
+   "reported_value": 4994,
+   "tolerance": 0
+  },
+  {
+   "claim_id": "C02",
+   "text": "Evidence span validity (mean)",
+   "metric_key": "mean_span_valid_rate",
+   "reported_value": 0.9984
+  },
+  {
+   "claim_id": "C03",
+   "text": "Evidence coverage (mean)",
+   "metric_key": "mean_coverage",
+   "reported_value": 0.576
+  },
+  {
+   "claim_id": "C04",
+   "text": "Substring support rate (mean)",
+   "metric_key": "mean_substring_support_rate",
+   "reported_value": 0.9996
+  },
+  {
+   "claim_id": "C05",
+   "text": "Medication section alignment (mean)",
+   "metric_key": "mean_med_section_alignment_rate",
+   "reported_value": 0.6603
+  },
+  {
+   "claim_id": "C06",
+   "text": "Mean evidence count",
+   "metric_key": "mean_evidence_count",
+   "reported_value": 9.945
+  },
+  {
+   "claim_id": "C07",
+   "text": "Evidence present rate, symptoms",
+   "metric_key": "present_rate_symptoms",
+   "reported_value": 0.718
+  },
+  {
+   "claim_id": "C08",
+   "text": "Evidence present rate, diagnoses",
+   "metric_key": "present_rate_diagnoses",
+   "reported_value": 0.837
+  },
+  {
+   "claim_id": "C09",
+   "text": "Evidence present rate, medications",
+   "metric_key": "present_rate_medications",
+   "reported_value": 0.336
+  },
+  {
+   "claim_id": "C10",
+   "text": "Gold50 micro-F1, symptoms",
+   "metric_key": "gold_micro_f1_symptoms",
+   "reported_value": 0.326
+  },
+  {
+   "claim_id": "C11",
+   "text": "Gold50 micro-F1, diagnoses",
+   "metric_key": "gold_micro_f1_diagnoses",
+   "reported_value": 0.261
+  },
+  {
+   "claim_id": "C12",
+   "text": "Gold50 micro-F1, medications",
+   "metric_key": "gold_micro_f1_medications",
+   "reported_value": 0.504
+  },
+  {
+   "claim_id": "C13",
+   "text": "Roundtrip mean Jaccard, symptoms",
+   "metric_key": "roundtrip_jaccard_symptoms",
+   "reported_value": 0.762
+  },
+  {
+   "claim_id": "C14",
+   "text": "Roundtrip mean Jaccard, diagnoses",
+   "metric_key": "roundtrip_jaccard_diagnoses",
+   "reported_value": 0.757
+  },
+  {
+   "claim_id": "C15",
+   "text": "Roundtrip mean Jaccard, medications",
+   "metric_key": "roundtrip_jaccard_medications",
+   "reported_value": 0.613
+  }
+ ]
+}

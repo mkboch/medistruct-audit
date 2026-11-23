@@ -1,0 +1,54 @@
+{
+ "case_id": "dev_syn_a",
+ "issues": [
+  {
+   "code": "CLAIM_NOT_REPRODUCED",
+   "target": "C07"
+  },
+  {
+   "code": "EVIDENCE_POSTHOC",
+   "target": ""
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "span_valid_rate"
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "substring_support_rate"
+  },
+  {
+   "code": "EVIDENCE_CAP_LIMITS_COVERAGE",
+   "target": ""
+  },
+  {
+   "code": "OFFSETS_NOT_IN_SOURCE",
+   "target": ""
+  },
+  {
+   "code": "ZERO_FILLED_DENOMINATOR",
+   "target": "med_section_alignment_rate"
+  },
+  {
+   "code": "FAILURES_CLUSTERED",
+   "target": ""
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "dev_syn_a",
+  "seed": 11,
+  "n_notes": 80,
+  "evidence_mode": "posthoc",
+  "cap_total": 12,
+  "cap_meds": 4,
+  "med_impl": "zero_fill",
+  "no_med_section_frac": 0.2,
+  "n_fail": 3,
+  "fail_clustered": true,
+  "perturb_claims": [
+   "gold_micro_f1_symptoms"
+  ]
+ }
+}

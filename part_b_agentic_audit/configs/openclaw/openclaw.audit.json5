@@ -1,0 +1,49 @@
+// Pinned OpenClaw config for the agentic audit experiments (OpenClaw 2026.11.6).
+// Used only via `openclaw agent exec --config <this file>` (embedded run; no Gateway process is started,
+// so no network listener exists). Per-run MCP server definitions are added with --config-override.
+{
+  models: {
+    providers: {
+      vllm: {
+        baseUrl: "http://127.0.0.1:${AUDIT_LLM_PORT}/v1",
+        apiKey: "${VLLM_API_KEY}",
+        api: "openai-completions",
+        timeoutSeconds: 600,
+        models: [
+          {
+            id: "${AUDIT_LLM_MODEL_ID}",
+            name: "Local audit LLM",
+            reasoning: true,
+            input: ["text"],
+            cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+            contextWindow: 131072,
+            maxTokens: 16384,
+            compat: { thinkingFormat: "qwen-chat-template" },
+          },
+        ],
+      },
+    },
+  },
+  agents: {
+    defaults: {
+      model: { primary: "vllm/${AUDIT_LLM_MODEL_ID}" },
+      sandbox: { mode: "off" },          // OpenClaw's container sandbox needs Docker (unavailable); the
+                                          // MCP tool server is sandboxed with Landlock instead, and every
+                                          // built-in host tool is denied below.
+      contextInjection: "never",          // no workspace bootstrap files injected
+      skills: [],                          // no skills
+    },
+  },
+  tools: {
+    profile: "minimal",
+    alsoAllow: ["bundle-mcp"],
+    toolSearch: false,                     // present audit tool schemas directly (no deferred tool search)
+    deny: ["group:runtime", "group:fs", "group:web", "group:ui", "group:automation", "group:messaging",
+           "group:sessions", "group:memory", "group:nodes", "group:media", "cron", "gateway",
+           "sessions_spawn", "sessions_send", "browser", "canvas"],
+    exec: { security: "deny", ask: "always" },
+    elevated: { enabled: false },
+    fs: { workspaceOnly: true },
+  },
+  discovery: { mdns: { mode: "off" } },
+}

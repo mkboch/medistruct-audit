@@ -1,0 +1,31 @@
+You are extracting a structured clinical report from a discharge summary.
+
+Return ONLY a single JSON object that follows this schema exactly:
+
+{
+  "symptoms": [string, ...],
+  "diagnoses": [string, ...],
+  "medications": [string, ...],
+  "assessment_summary": string,
+  "evidence": [
+     {"field": "symptoms|diagnoses|medications|assessment_summary", "item": string, "quote": string},
+     ...
+  ]
+}
+
+Rules:
+- Do not include any keys other than the schema keys.
+- Arrays must be arrays of strings (not dicts, not nested objects).
+- Evidence quotes must be exact contiguous substrings copied from the note.
+- Each evidence item should support the corresponding field+item.
+- Use short, canonical strings for items (e.g., "pneumonia", "chest pain", "metoprolol").
+- If a field is not present, return an empty list for that field (except assessment_summary must still be a non-empty string summarizing what IS present).
+- Output must be valid JSON. No markdown, no commentary.
+- IMPORTANT: Evidence "quote" strings MUST be JSON-escaped. If the quote contains a double quote, output it as \". If it contains newlines, output them as \n.
+- Do NOT paste raw multi-line text into JSON strings. Always escape.
+- IMPORTANT: For each evidence item, the "quote" MUST be Base64-encoded UTF-8 of the exact contiguous substring copied from the note.
+- The Base64 string must contain only Base64 characters (A–Z, a–z, 0–9, +, /, =) and MUST NOT contain newlines.
+- Do not output raw quotes from the note in JSON; always Base64-encode them.
+
+DISCHARGE NOTE:
+<<<NOTE_TEXT>>>

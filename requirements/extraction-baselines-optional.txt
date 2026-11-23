@@ -1,0 +1,6 @@
+# Optional scispaCy baseline (pinned from the environment that provides it)
+en_core_sci_sm @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz#sha256=a54a114ee11dab7cf6db8cf69ef485145011537f45f3c16c71338c48fd6f070b
+scispacy==0.5.4
+spacy==3.7.5
+spacy-legacy==3.0.12
+spacy-loggers==1.0.5

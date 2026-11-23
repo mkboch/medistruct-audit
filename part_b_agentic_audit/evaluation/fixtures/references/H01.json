@@ -1,0 +1,59 @@
+{
+ "case_id": "H01",
+ "issues": [
+  {
+   "code": "CLAIM_NOT_REPRODUCED",
+   "target": "C03"
+  },
+  {
+   "code": "EVIDENCE_POSTHOC",
+   "target": ""
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "span_valid_rate"
+  },
+  {
+   "code": "TAUTOLOGICAL_METRIC",
+   "target": "substring_support_rate"
+  },
+  {
+   "code": "EVIDENCE_CAP_LIMITS_COVERAGE",
+   "target": ""
+  },
+  {
+   "code": "OFFSETS_NOT_IN_SOURCE",
+   "target": ""
+  },
+  {
+   "code": "ZERO_FILLED_DENOMINATOR",
+   "target": "med_section_alignment_rate"
+  },
+  {
+   "code": "HETEROGENEOUS_RUN_SETTINGS",
+   "target": ""
+  },
+  {
+   "code": "FAILURES_CLUSTERED",
+   "target": ""
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H01",
+  "seed": 101,
+  "n_notes": 90,
+  "evidence_mode": "posthoc",
+  "cap_total": 12,
+  "cap_meds": 4,
+  "med_impl": "zero_fill",
+  "no_med_section_frac": 0.25,
+  "n_fail": 4,
+  "fail_clustered": true,
+  "hetero_frac": 0.1,
+  "perturb_claims": [
+   "mean_coverage"
+  ]
+ }
+}

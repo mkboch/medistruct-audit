@@ -1,0 +1,26 @@
+{
+ "case_id": "H10",
+ "issues": [
+  {
+   "code": "CLAIM_NOT_REPRODUCED",
+   "target": "C01"
+  },
+  {
+   "code": "CLAIM_NOT_REPRODUCED",
+   "target": "C11"
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H10",
+  "seed": 110,
+  "n_notes": 70,
+  "evidence_mode": "model",
+  "med_impl": "null_na",
+  "perturb_claims": [
+   "schema_valid_count",
+   "roundtrip_jaccard_diagnoses"
+  ]
+ }
+}

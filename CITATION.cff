@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated preprint (citation details to be added after posting)."
+title: "medistruct-audit: code for auditable clinical note structuring with local language models and an evaluation of agentic quality assurance"
+type: software
+authors:
+  - given-names: "Md Motaleb Hossen"
+    family-names: "Manik"
+  - given-names: "Pingkun"
+    family-names: "Yan"
+  - given-names: "Ge"
+    family-names: "Wang"
+  - given-names: "Anushree"
+    family-names: "Burade"
+  - given-names: "Mannudeep K."
+    family-names: "Kalra"
+  - given-names: "Ana Lucia"
+    family-names: "Guzman Botero"

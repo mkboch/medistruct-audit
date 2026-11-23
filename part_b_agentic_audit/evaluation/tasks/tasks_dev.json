@@ -1,0 +1,47 @@
+{
+ "version": "1.0.0",
+ "tasks": [
+  {
+   "task_id": "D01",
+   "case_id": "real_mimic5k",
+   "scope": "evidence",
+   "split": "dev",
+   "instruction": "For case real_mimic5k, investigate whether the evidence spans and the evidence-based metrics (span validity, coverage, substring support) can be interpreted as evidence of model faithfulness to the source note."
+  },
+  {
+   "task_id": "D02",
+   "case_id": "real_mimic5k",
+   "scope": "med_alignment",
+   "split": "dev",
+   "instruction": "For case real_mimic5k, investigate whether the reported medication section alignment result is reliable."
+  },
+  {
+   "task_id": "D03",
+   "case_id": "real_mimic5k",
+   "scope": "claims",
+   "split": "dev",
+   "instruction": "For case real_mimic5k, check whether each reported quantitative claim is reproducible from the saved artifacts, and explain any discrepancy."
+  },
+  {
+   "task_id": "D04",
+   "case_id": "real_mimic5k",
+   "scope": "full",
+   "split": "dev",
+   "instruction": "Audit case real_mimic5k. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "D05",
+   "case_id": "dev_syn_a",
+   "scope": "full",
+   "split": "dev",
+   "instruction": "Audit case dev_syn_a. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  },
+  {
+   "task_id": "D06",
+   "case_id": "dev_syn_b",
+   "scope": "full",
+   "split": "dev",
+   "instruction": "Audit case dev_syn_b. Determine whether the reported claims are reproducible from the saved artifacts and whether the evaluation metrics and evidence spans can be trusted. Investigate any problem you find before concluding. If you find no problems, say so."
+  }
+ ]
+}

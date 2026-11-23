@@ -1,0 +1,19 @@
+{
+ "case_id": "H03",
+ "issues": [
+  {
+   "code": "ZERO_FILLED_DENOMINATOR",
+   "target": "med_section_alignment_rate"
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [],
+ "knobs": {
+  "case_id": "H03",
+  "seed": 103,
+  "n_notes": 70,
+  "evidence_mode": "model",
+  "med_impl": "zero_fill",
+  "no_med_section_frac": 0.3
+ }
+}

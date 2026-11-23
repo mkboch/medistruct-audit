@@ -1,0 +1,23 @@
+{
+ "case_id": "H13",
+ "issues": [
+  {
+   "code": "MISSING_ARTIFACT",
+   "target": "gold_csv"
+  }
+ ],
+ "notes": [],
+ "unverifiable_claims": [
+  "C07",
+  "C08",
+  "C09"
+ ],
+ "knobs": {
+  "case_id": "H13",
+  "seed": 113,
+  "n_notes": 60,
+  "evidence_mode": "model",
+  "med_impl": "null_na",
+  "drop_gold": true
+ }
+}
