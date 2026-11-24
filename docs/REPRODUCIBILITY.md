@@ -69,6 +69,29 @@ Evidence spans were not produced by the model (the prompt requests an empty list
 
 No prompt file was modified after 2026-03-06, so the templates in this repository are the versions that existed when the roundtrip ran on 2026-03-15.
 
+**Comparability caveat.** The two extraction phases differ:
+
+| Phase | Decoding | Output tokens |
+|---|---|---|
+| Original extraction | JSON-schema-constrained | 500 (400 in one retry pass) |
+| Roundtrip re-extraction | unconstrained chat, then parsed and validated | 1,100 |
+| Regeneration | — | 1,400 |
+
+These differences can change the extracted item sets independently of content preservation. The roundtrip Jaccard is therefore an approximate measure of structural self-consistency, not of faithfulness to the source note.
+
+Commands (your own authorised data and a **local** endpoint only):
+```bash
+cd part_a_extraction/Codes
+export OPENAI_BASE_URL=http://127.0.0.1:<port>/v1 OPENAI_API_KEY=EMPTY
+python run_roundtrip_vllm.py --inputs ../../data_local/inputs_gold50.jsonl --extract_run_dir ../../data_local/extract_run \
+  --out_dir ../../data_local/roundtrip --schema configs/schema_v2_spans.json --model Qwen/Qwen2.5-7B-Instruct \
+  --regen_prompt prompts/regen_v1.txt --extract_prompt prompts/<one of the three candidates above> \
+  --base_url "$OPENAI_BASE_URL" --temperature 0 --regen_max_tokens 1400 --reextract_max_tokens 1100
+python roundtrip_eval.py --s_dir ../../data_local/extract_run/normalized --sp_dir ../../data_local/roundtrip/reextract_norm \
+  --out_csv ../../data_local/roundtrip/roundtrip_eval_summary.csv
+```
+`roundtrip_eval.py` reproduces the historical summary file byte for byte from the saved structured outputs. It is unmodified historical code, and so is `run_roundtrip_vllm.py`.
+
 ### What you can reproduce
 - **Without MIMIC access:** the full code path on synthetic inputs (`tests/test_part_a_smoke.py`).
 - **With your own credentialed MIMIC-IV-Note copy and a local vLLM server:** the full pipeline. Exact numerical agreement is not guaranteed:
@@ -87,9 +110,10 @@ No prompt file was modified after 2026-03-06, so the templates in this repositor
 | Tools | 12 read-only tools + report submission (`tools/audit_core.py` v1.0.0, `tools/mcp_server.py`) |
 | Sandbox | Landlock ABI ≥ 4 (`agents/landlock_exec.py`): read-only case artifacts, write only to the run directory, no TCP, environment allow-list |
 | Instructions | `prompts/agent_protocol_v2.md` (v1 was used only on development tasks) |
-| Conditions | A deterministic checklist (rules v1.0.0); B agent with full tools; D agent with metadata only |
-| Tasks | 6 development tasks; 29 held-out tasks (18 synthetic cases, 10 focused questions, 1 restricted real case), 3 trials for B and D |
-| Statistics | trials averaged within each task; 2,000-resample task-level bootstrap (seed 0); paired bootstrap for differences (`evaluation/scoring/aggregate.py`) |
+| Conditions | deterministic checklist (rules v1.0.0; internal id A); OpenClaw with audit tools (B); OpenClaw without audit tools, metadata only (D). No condition "C" was run: in the study plan C denoted the reference answers. |
+| Tasks | 6 development tasks. 29 held-out tasks were executed: full audits of 18 synthetic cases (14 with planted faults, 4 clean), 10 focused questions, and 1 full audit of a ten-note pilot case (T29). Six tasks have the answer "no issue". **Primary analysis: 28 tasks (T29 excluded; pilot provenance unverified).** Checklist 1 run per task (deterministic); each agent condition 3 runs per task. |
+| Scoring (v2) | task F1 = 2TP/(2TP+FP+FN) per run (0 when no reference finding is detected, including missing or malformed reports); clean tasks: 1 iff a submitted report asserts no in-scope finding; precision undefined when nothing is asserted (averaged where defined) (`evaluation/scoring/aggregate.py`, `score.py`) |
+| Statistics | trials averaged within each task, then over tasks; 2,000-resample task-level bootstrap (seed 0); paired task resampling for differences over identical task sets |
 
 Reproduce the synthetic part:
 
@@ -100,14 +124,23 @@ python agents/run_agent.py --exp MY_EXP --cond A --tasks evaluation/tasks/tasks_
 export AUDIT_LLM_PORT=<port> AUDIT_LLM_MODEL_ID=<served-name> AUDIT_VLLM_VERSION=<version>
 python agents/run_agent.py --exp MY_EXP --cond B --tasks evaluation/tasks/tasks_heldout.json --trials 3
 python agents/run_agent.py --exp MY_EXP --cond D --tasks evaluation/tasks/tasks_heldout.json --trials 3
-python evaluation/scoring/aggregate.py --exp MY_EXP --tasks evaluation/tasks/tasks_heldout.json
+python evaluation/scoring/aggregate.py --exp MY_EXP --tasks evaluation/tasks/tasks_heldout.json --exclude-task T29
+python manuscript/make_tables.py --in-dir runs/MY_EXP --out runs/MY_EXP/tables
 ```
 
 **Restricted parts of Part B:**
 - Development tasks D01–D04 audit the restricted real 5,000-note run. They require your own Part A outputs in the historical layout; point `MEDSTRUCT_HIST_DIR` to them.
-- Held-out task T29 audits a restricted external pilot. It cannot be run from this release.
+- Held-out task T29 audits a ten-note pilot case that is not distributed. It cannot be run from this release and is excluded from the primary analysis.
 
-**Shipped results:** `runs/EXP_heldout/scores_summary.json` holds the paper's aggregate results; per-run traces are not distributed. `manuscript/make_tables.py` regenerates Tables 2–6 from a complete run directory.
+**Shipped results:**
+
+| Location | Content | Status |
+|---|---|---|
+| `manuscript/corrected_28_tasks/` | run-level scores (28 synthetic tasks), v2 summary, generated tables | **primary analysis reported in the paper**; reproducible from the repository alone |
+| `manuscript/archive_29_tasks_scoring_v2/` | aggregate v2 re-scoring of all 29 executed tasks | archive, for comparison |
+| `runs/EXP_heldout/scores_summary.json`, `manuscript/generated/` | original 29-task summary and tables computed with scoring v1 (task-F1 defect) | archive, unchanged provenance; superseded |
+
+Per-run agent traces (tool logs, reports, OpenClaw state) are not distributed.
 
 ### Synthetic fixtures
 The held-out synthetic cases are generated deterministically by `evaluation/fixtures/make_fixtures.py` from template vocabulary written for this project. They contain no patient data and no text copied from any clinical record. Reference answers derive from the injected faults, independently of the audit tools.

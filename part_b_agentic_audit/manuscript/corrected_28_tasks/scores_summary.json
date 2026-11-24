@@ -1,0 +1,471 @@
+{
+  "label": "scores_csv=scores_runs.csv | excluded=T29",
+  "scoring_version": "2.0.0",
+  "n_runs": 196,
+  "integrity": {
+    "conditions": [
+      "A",
+      "B",
+      "D"
+    ],
+    "n_tasks": 28,
+    "trials_expected": {
+      "A": 1,
+      "B": 3,
+      "D": 3
+    },
+    "tasks_with_incomplete_trials": {},
+    "malformed_reports": 0,
+    "missing_reports": 7,
+    "excluded_tasks": [
+      "T29"
+    ]
+  },
+  "conditions": {
+    "A": {
+      "n_runs": 28,
+      "n_tasks": 28,
+      "n_reports_submitted": 28,
+      "pooled_tp": 54,
+      "pooled_fp": 1,
+      "pooled_fn": 1,
+      "micro_precision": 0.9818181818181818,
+      "micro_recall": 0.9818181818181818,
+      "micro_f1": 0.9818181818181818,
+      "f1": [
+        0.9615384615384616,
+        0.8873626373626374,
+        1.0
+      ],
+      "f1_n_tasks": 28,
+      "precision": [
+        0.9565217391304348,
+        0.8695652173913043,
+        1.0
+      ],
+      "precision_n_tasks": 23,
+      "recall": [
+        0.9935064935064936,
+        0.9805194805194806,
+        1.0
+      ],
+      "recall_n_tasks": 22,
+      "exact_match": [
+        0.9285714285714286,
+        0.8214285714285714,
+        1.0
+      ],
+      "exact_match_n_tasks": 28,
+      "report_submitted": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "report_submitted_n_tasks": 28,
+      "n_tool_calls": [
+        25.0,
+        25.0,
+        25.0
+      ],
+      "n_tool_calls_n_tasks": 28,
+      "n_numbers": [
+        2.25,
+        1.2857142857142858,
+        3.392857142857143
+      ],
+      "n_numbers_n_tasks": 28,
+      "unsupported_numbers": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unsupported_numbers_n_tasks": 28,
+      "uncited_confirmed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncited_confirmed_n_tasks": 28,
+      "bad_citations": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bad_citations_n_tasks": 28,
+      "n_argument_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_argument_errors_n_tasks": 28,
+      "false_refutation_unverifiable": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "false_refutation_unverifiable_n_tasks": 28,
+      "duration_s": [
+        0.09857142857142857,
+        0.09178571428571429,
+        0.10750000000000001
+      ],
+      "duration_s_n_tasks": 28,
+      "total_tokens": [
+        null,
+        null,
+        null
+      ],
+      "total_tokens_n_tasks": 0,
+      "clean_tasks_correct_no_issue": [
+        0.8333333333333334,
+        0.5,
+        1.0
+      ]
+    },
+    "B": {
+      "n_runs": 84,
+      "n_tasks": 28,
+      "n_reports_submitted": 83,
+      "pooled_tp": 136,
+      "pooled_fp": 14,
+      "pooled_fn": 29,
+      "micro_precision": 0.9066666666666666,
+      "micro_recall": 0.8242424242424242,
+      "micro_f1": 0.8634920634920635,
+      "f1": [
+        0.8764019710448282,
+        0.8021541950113378,
+        0.9378728414442701
+      ],
+      "f1_n_tasks": 28,
+      "precision": [
+        0.8840579710144927,
+        0.782608695652174,
+        0.9685990338164252
+      ],
+      "precision_n_tasks": 23,
+      "recall": [
+        0.8794492544492545,
+        0.79004329004329,
+        0.9525012025012025
+      ],
+      "recall_n_tasks": 22,
+      "exact_match": [
+        0.6666666666666667,
+        0.5,
+        0.8214285714285714
+      ],
+      "exact_match_n_tasks": 28,
+      "report_submitted": [
+        0.9880952380952381,
+        0.9642857142857143,
+        1.0
+      ],
+      "report_submitted_n_tasks": 28,
+      "n_tool_calls": [
+        20.809523809523807,
+        18.130952380952383,
+        23.404761904761905
+      ],
+      "n_tool_calls_n_tasks": 28,
+      "n_numbers": [
+        6.440476190476191,
+        4.916666666666666,
+        8.202380952380953
+      ],
+      "n_numbers_n_tasks": 28,
+      "unsupported_numbers": [
+        0.4880952380952381,
+        0.2976190476190476,
+        0.6904761904761905
+      ],
+      "unsupported_numbers_n_tasks": 28,
+      "uncited_confirmed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncited_confirmed_n_tasks": 28,
+      "bad_citations": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bad_citations_n_tasks": 28,
+      "n_argument_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_argument_errors_n_tasks": 28,
+      "false_refutation_unverifiable": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "false_refutation_unverifiable_n_tasks": 28,
+      "duration_s": [
+        52.14523809523809,
+        47.61690476190476,
+        57.10107142857142
+      ],
+      "duration_s_n_tasks": 28,
+      "total_tokens": [
+        103744.5,
+        92109.17857142857,
+        114495.28571428571
+      ],
+      "total_tokens_n_tasks": 28,
+      "clean_tasks_correct_no_issue": [
+        0.8888888888888888,
+        0.6666666666666666,
+        1.0
+      ],
+      "trials_identical_rate": 0.6071428571428571,
+      "trials_mean_pairwise_jaccard": 0.8111536281179139,
+      "paired_diff_vs_A": {
+        "f1": [
+          -0.08513649049363337,
+          -0.18386316064887495,
+          0.019963369963369955
+        ],
+        "f1_n_tasks": 28,
+        "exact_match": [
+          -0.2619047619047619,
+          -0.42857142857142855,
+          -0.09523809523809525
+        ],
+        "exact_match_n_tasks": 28,
+        "n_tool_calls": [
+          -4.19047619047619,
+          -6.869047619047619,
+          -1.595238095238095
+        ],
+        "n_tool_calls_n_tasks": 28
+      }
+    },
+    "D": {
+      "n_runs": 84,
+      "n_tasks": 28,
+      "n_reports_submitted": 78,
+      "pooled_tp": 38,
+      "pooled_fp": 20,
+      "pooled_fn": 127,
+      "micro_precision": 0.6551724137931034,
+      "micro_recall": 0.23030303030303031,
+      "micro_f1": 0.34080717488789236,
+      "f1": [
+        0.350417439703154,
+        0.22222222222222224,
+        0.4897959183673469
+      ],
+      "f1_n_tasks": 28,
+      "precision": [
+        0.538888888888889,
+        0.3388888888888889,
+        0.7555555555555555
+      ],
+      "precision_n_tasks": 20,
+      "recall": [
+        0.22174122174122174,
+        0.10389610389610389,
+        0.3569023569023569
+      ],
+      "recall_n_tasks": 22,
+      "exact_match": [
+        0.20238095238095236,
+        0.08333333333333333,
+        0.33333333333333337
+      ],
+      "exact_match_n_tasks": 28,
+      "report_submitted": [
+        0.9285714285714286,
+        0.880952380952381,
+        0.9761904761904762
+      ],
+      "report_submitted_n_tasks": 28,
+      "n_tool_calls": [
+        4.583333333333334,
+        4.1309523809523805,
+        5.059523809523809
+      ],
+      "n_tool_calls_n_tasks": 28,
+      "n_numbers": [
+        1.4107142857142858,
+        0.9464285714285714,
+        1.9107142857142858
+      ],
+      "n_numbers_n_tasks": 28,
+      "unsupported_numbers": [
+        0.16666666666666669,
+        0.05952380952380952,
+        0.2976190476190476
+      ],
+      "unsupported_numbers_n_tasks": 28,
+      "uncited_confirmed": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "uncited_confirmed_n_tasks": 28,
+      "bad_citations": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bad_citations_n_tasks": 28,
+      "n_argument_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_argument_errors_n_tasks": 28,
+      "false_refutation_unverifiable": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "false_refutation_unverifiable_n_tasks": 28,
+      "duration_s": [
+        64.32202380952381,
+        49.43630952380953,
+        86.63595238095238
+      ],
+      "duration_s_n_tasks": 28,
+      "total_tokens": [
+        229595.10714285713,
+        35607.47619047619,
+        610204.869047619
+      ],
+      "total_tokens_n_tasks": 28,
+      "clean_tasks_correct_no_issue": [
+        0.5555555555555555,
+        0.27777777777777773,
+        0.7777777777777778
+      ],
+      "trials_identical_rate": 0.42857142857142855,
+      "trials_mean_pairwise_jaccard": 0.6329365079365079,
+      "paired_diff_vs_A": {
+        "f1": [
+          -0.6111210218353076,
+          -0.7647491397491397,
+          -0.4443671407957122
+        ],
+        "f1_n_tasks": 28,
+        "exact_match": [
+          -0.7261904761904762,
+          -0.880952380952381,
+          -0.5476190476190477
+        ],
+        "exact_match_n_tasks": 28,
+        "n_tool_calls": [
+          -20.416666666666664,
+          -20.86904761904762,
+          -19.940476190476193
+        ],
+        "n_tool_calls_n_tasks": 28
+      }
+    }
+  },
+  "notes": {
+    "per_report_metrics": [
+      "bad_citations",
+      "n_numbers",
+      "uncited_confirmed",
+      "unsupported_numbers"
+    ],
+    "precision": "averaged over runs with at least one in-scope assertion"
+  },
+  "by_scope": {
+    "A|claims": {
+      "n_runs": 3,
+      "n_tasks": 3,
+      "exact_match": 1.0,
+      "mean_tool_calls": 25.0
+    },
+    "A|evidence": {
+      "n_runs": 2,
+      "n_tasks": 2,
+      "exact_match": 1.0,
+      "mean_tool_calls": 25.0
+    },
+    "A|full": {
+      "n_runs": 18,
+      "n_tasks": 18,
+      "exact_match": 0.8888888888888888,
+      "mean_tool_calls": 25.0
+    },
+    "A|med_alignment": {
+      "n_runs": 3,
+      "n_tasks": 3,
+      "exact_match": 1.0,
+      "mean_tool_calls": 25.0
+    },
+    "A|provenance": {
+      "n_runs": 2,
+      "n_tasks": 2,
+      "exact_match": 1.0,
+      "mean_tool_calls": 25.0
+    },
+    "B|claims": {
+      "n_runs": 9,
+      "n_tasks": 3,
+      "exact_match": 1.0,
+      "mean_tool_calls": 21.555555555555557
+    },
+    "B|evidence": {
+      "n_runs": 6,
+      "n_tasks": 2,
+      "exact_match": 0.3333333333333333,
+      "mean_tool_calls": 11.333333333333334
+    },
+    "B|full": {
+      "n_runs": 54,
+      "n_tasks": 18,
+      "exact_match": 0.5555555555555556,
+      "mean_tool_calls": 25.09259259259259
+    },
+    "B|med_alignment": {
+      "n_runs": 9,
+      "n_tasks": 3,
+      "exact_match": 1.0,
+      "mean_tool_calls": 9.222222222222221
+    },
+    "B|provenance": {
+      "n_runs": 6,
+      "n_tasks": 2,
+      "exact_match": 1.0,
+      "mean_tool_calls": 8.0
+    },
+    "D|claims": {
+      "n_runs": 9,
+      "n_tasks": 3,
+      "exact_match": 0.2222222222222222,
+      "mean_tool_calls": 3.6666666666666665
+    },
+    "D|evidence": {
+      "n_runs": 6,
+      "n_tasks": 2,
+      "exact_match": 0.0,
+      "mean_tool_calls": 4.5
+    },
+    "D|full": {
+      "n_runs": 54,
+      "n_tasks": 18,
+      "exact_match": 0.25925925925925924,
+      "mean_tool_calls": 5.0
+    },
+    "D|med_alignment": {
+      "n_runs": 9,
+      "n_tasks": 3,
+      "exact_match": 0.0,
+      "mean_tool_calls": 4.0
+    },
+    "D|provenance": {
+      "n_runs": 6,
+      "n_tasks": 2,
+      "exact_match": 0.16666666666666666,
+      "mean_tool_calls": 3.1666666666666665
+    }
+  }
+}

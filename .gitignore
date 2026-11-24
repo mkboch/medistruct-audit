@@ -11,6 +11,7 @@ part_b_agentic_audit/evaluation/fixtures/cases/
 part_b_agentic_audit/evaluation/tasks/BUILD_MANIFEST.json
 part_b_agentic_audit/runs/**/trial*/
 part_b_agentic_audit/runs/**/scores_runs.csv
+part_b_agentic_audit/runs/**/experiment_*.json
 part_b_agentic_audit/runs/cache/
 part_b_agentic_audit/environment/vllm_home/
 part_b_agentic_audit/environment/.venv/
