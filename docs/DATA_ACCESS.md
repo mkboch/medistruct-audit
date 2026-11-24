@@ -7,6 +7,8 @@ This repository distributes **source code only**. It contains none of the follow
 - data from the external pilot used as one held-out audit case;
 - per-run agent traces.
 
+What *is* included from Part B: aggregate summaries, and run-level scores for the 28 synthetic held-out tasks (`part_b_agentic_audit/manuscript/corrected_28_tasks/scores_runs.csv`). That file holds finding codes, counts, timings and token totals computed on synthetic fault-injected cases. It has no clinical text and no rows for the pilot case or the real extraction run.
+
 ## MIMIC-IV-Note
 MIMIC-IV-Note is a restricted-access resource. Obtain it yourself from PhysioNet (https://physionet.org/content/mimic-iv-note/), which requires:
 - credentialed access;

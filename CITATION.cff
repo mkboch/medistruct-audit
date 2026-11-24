@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this code, please cite the associated preprint (citation details to be added after posting)."
 title: "medistruct-audit: code for auditable clinical note structuring with local language models and an evaluation of agentic quality assurance"
 type: software
+repository-code: "https://github.com/mkboch/medistruct-audit"
 authors:
   - given-names: "Md Motaleb Hossen"
     family-names: "Manik"
