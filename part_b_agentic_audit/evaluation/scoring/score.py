@@ -98,8 +98,17 @@ def score_run(run_dir: Path, task: dict, reference: dict, claims_map: dict) -> d
     meta = json.loads((run_dir / "run_meta.json").read_text()) if (run_dir / "run_meta.json").exists() else {}
     ref = {(i["code"], norm_target(i["code"], i["target"])) for i in reference["issues"]
            if in_scope(i["code"], norm_target(i["code"], i["target"]), scope, claims_map)}
+    # A report that exists but cannot be parsed is treated as not submitted (no credit) and flagged.
+    rep, report_malformed = None, False
+    if rep_p.exists():
+        try:
+            rep = json.loads(rep_p.read_text())
+            if not isinstance(rep, dict) or not isinstance(rep.get("findings", []), list):
+                raise ValueError("report is not an object with a findings list")
+        except (ValueError, json.JSONDecodeError):
+            rep, report_malformed = None, True
     out = {"task_id": task["task_id"], "case_id": task["case_id"], "scope": scope, "split": task["split"],
-           "reference": sorted(map(list, ref)), "report_submitted": rep_p.exists()}
+           "reference": sorted(map(list, ref)), "report_submitted": rep is not None, "report_malformed": report_malformed}
     n_tool = sum(1 for c in calls if c["tool"] != "submit_audit_report")
     n_err = sum(1 for c in calls if not c.get("ok"))
     out.update(n_tool_calls=n_tool, n_tool_errors=n_err,
@@ -109,17 +118,17 @@ def score_run(run_dir: Path, task: dict, reference: dict, claims_map: dict) -> d
                duration_s=meta.get("duration_s"), total_tokens=meta.get("total_tokens"),
                n_distinct_tools=len({c["tool"] for c in calls if c["tool"] != "submit_audit_report"}),
                n_repeated_calls=n_tool - len({(c["tool"], json.dumps(c.get("args"), sort_keys=True)) for c in calls if c["tool"] != "submit_audit_report"}))
-    if not rep_p.exists():
+    if rep is None:  # missing or malformed report: no credit on any task
         out.update(tp=0, fp=0, fn=len(ref), precision=None, recall=0.0 if ref else None, exact_match=False,
-                   no_issue_correct=None, unsupported_numbers=None, n_numbers=0, uncited_confirmed=None,
-                   bad_citations=None, false_refutation_unverifiable=0, pred=[])
+                   no_issue_correct=None if ref else False, unsupported_numbers=None, n_numbers=None,
+                   uncited_confirmed=None, bad_citations=None, false_refutation_unverifiable=0, pred=[])
         return out
-    rep = json.loads(rep_p.read_text())
-    finds = rep.get("findings", [])
+    finds = [f for f in rep.get("findings", []) if isinstance(f, dict)]
     pred = set()
     for f in finds:
         if f.get("category") in ASSERTED:
-            k = (f["code"], norm_target(f["code"], f.get("target", "")))
+            code = f.get("code", "OTHER")
+            k = (code, norm_target(code, f.get("target", "")))
             if in_scope(k[0], k[1], scope, claims_map):
                 pred.add(k)
     says_none = any(f.get("code") == "NO_ISSUES_FOUND" for f in finds)
@@ -133,7 +142,7 @@ def score_run(run_dir: Path, task: dict, reference: dict, claims_map: dict) -> d
     unsup = [n for n in nums if not supported(n, pool)]
     confirmed = [f for f in finds if f.get("category") == "confirmed_finding" and f.get("code") != "NO_ISSUES_FOUND"]
     out.update(pred=sorted(map(list, pred)), tp=tp, fp=fp, fn=fn,
-               precision=tp / (tp + fp) if tp + fp else (1.0 if not ref else None),
+               precision=tp / (tp + fp) if tp + fp else None,   # undefined when nothing is asserted
                recall=tp / (tp + fn) if tp + fn else None,
                exact_match=(pred == ref) and (says_none == (not ref)) if not ref else pred == ref,
                no_issue_correct=(says_none and not pred) if not ref else None,
