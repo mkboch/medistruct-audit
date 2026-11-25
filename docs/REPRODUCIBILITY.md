@@ -1,6 +1,6 @@
 # Reproducibility
 
-This page documents the two experiments separately and says what can and cannot be reproduced from this code-only release. Each fact carries a provenance label:
+This page documents the two experiments separately and says what can and cannot be reproduced from this release (research source code, synthetic evaluation fixtures, synthetic run-level scores and aggregate results; no restricted clinical data). It accompanies the manuscript *Evidence Grounding, Roundtrip Consistency, and Agentic Quality Assurance in Local Clinical Note Structuring* (under coauthor review). Each fact carries a provenance label:
 
 - **[confirmed]**: established by a contemporaneous record (run receipts, server logs or vLLM usage records written at run time, model-cache provenance).
 - **[inferred]**: established by elimination or by consistency with saved outputs.
@@ -51,7 +51,9 @@ This page documents the two experiments separately and says what can and cannot 
 Evidence spans were not produced by the model (the prompt requests an empty list). `run_extract.generate_evidence_spans` anchors each item at its first case-insensitive occurrence in the extraction view, keeping at most 12 spans per note and at most 4 for medications. Metric definitions are in `utils.evidence_span_checks`. The uncapped exact-text support reported in the paper is computed by `part_b_agentic_audit/tools/audit_core.py: measure_exact_text_support`.
 
 ### Reference set (gold50)
-- **Source:** 50 notes from the run. The reference lists were prepared at MGH; annotator qualifications, protocol and adjudication are still to be documented.
+- **Source:** 50 notes from the run. Collaborators at MGH supplied the reference symptom, diagnosis and medication lists for this study.
+- **Not blinded:** model predictions were visible beside the labelling fields. Assessment summaries were not labelled.
+- **Not documented:** the selection procedure, annotator identities, labelling guidelines, adjudication and inter-annotator agreement are not documented in the retained materials. The manuscript therefore calls this a non-blind 50-note reference set, not independent clinician validation.
 - **Not distributed:** the labels and the per-note predictions.
 - **Scoring:** `Codes/eval/eval_gold50_baselines.py` (per note) and `reconstructed/gold50_micro_summary.py` (micro-averaged, reconstructed).
 
@@ -108,7 +110,7 @@ python roundtrip_eval.py --s_dir ../../data_local/extract_run/normalized --sp_di
 | Agent model serving | vLLM 0.24.0; TP 2 × PP 3; 131,072-token context; `--reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_coder` |
 | Agent sampling and limits | thinking on; temperature 0.6, top-p 0.95, top-k 20 (sent per request); 16,384 output tokens; 40 tool calls; 900 s timeout |
 | Tools | 12 read-only tools + report submission (`tools/audit_core.py` v1.0.0, `tools/mcp_server.py`) |
-| Sandbox | Landlock ABI ≥ 4 (`agents/landlock_exec.py`): read-only case artifacts, write only to the run directory, no TCP, environment allow-list |
+| Sandbox | MCP tool server only: Landlock ABI ≥ 4 (`agents/landlock_exec.py`). Read-only access to the registered artifacts of the audited case, writes only to the run directory, no TCP, environment allow-list. The OpenClaw process is restricted by its tool configuration, not by Landlock (see docs/SECURITY.md). |
 | Instructions | `prompts/agent_protocol_v2.md` (v1 was used only on development tasks) |
 | Conditions | deterministic checklist (rules v1.0.0; internal id A); OpenClaw with audit tools (B); OpenClaw without audit tools, metadata only (D). No condition "C" was run: in the study plan C denoted the reference answers. |
 | Tasks | 6 development tasks. 29 held-out tasks were executed: full audits of 18 synthetic cases (14 with planted faults, 4 clean), 10 focused questions, and 1 full audit of a ten-note pilot case (T29). Six tasks have the answer "no issue". **Primary analysis: 28 tasks (T29 excluded; pilot provenance unverified).** Checklist 1 run per task (deterministic); each agent condition 3 runs per task. |
@@ -143,4 +145,6 @@ python manuscript/make_tables.py --in-dir runs/MY_EXP --out runs/MY_EXP/tables
 Per-run agent traces (tool logs, reports, OpenClaw state) are not distributed.
 
 ### Synthetic fixtures
-The held-out synthetic cases are generated deterministically by `evaluation/fixtures/make_fixtures.py` from template vocabulary written for this project. They contain no patient data and no text copied from any clinical record. Reference answers derive from the injected faults, independently of the audit tools.
+The held-out synthetic cases are generated deterministically by `evaluation/fixtures/make_fixtures.py` (run through `evaluation/tasks/build_tasks.py`) from `fixture_specs.json` and template vocabulary written for this project. The generated case artifacts are not stored in git.
+- **What matches:** the synthetic files from a rebuild match the corresponding hashes in `FROZEN_MANIFEST.json`.
+- **What differs:** the case registry `configs/cases.json`, which records local paths and, in the research copy, the removed pilot case. See docs/PROVENANCE.md. They contain no patient data and no text copied from any clinical record. Reference answers derive from the injected faults, independently of the audit tools.
