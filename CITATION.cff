@@ -1,35 +1,7 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the associated manuscript. It is under coauthor review and has not yet been posted; the preprint URL, DOI and publication metadata will be added after posting."
+message: "If you use this code, please cite the associated manuscript. It is under coauthor review and has not yet been posted; the author list, preprint URL, DOI and publication metadata will be added after posting."
 title: "medistruct-audit: code and results for 'Evidence Grounding, Roundtrip Consistency, and Agentic Quality Assurance in Local Clinical Note Structuring'"
 type: software
 repository-code: "https://github.com/mkboch/medistruct-audit"
 authors:
-  - given-names: "Md Motaleb Hossen"
-    family-names: "Manik"
-  - given-names: "Pingkun"
-    family-names: "Yan"
-  - given-names: "Ge"
-    family-names: "Wang"
-  - given-names: "Anushree"
-    family-names: "Burade"
-  - given-names: "Mannudeep K."
-    family-names: "Kalra"
-  - given-names: "Ana Lucia"
-    family-names: "Guzman Botero"
-preferred-citation:
-  type: unpublished
-  title: "Evidence Grounding, Roundtrip Consistency, and Agentic Quality Assurance in Local Clinical Note Structuring"
-  notes: "Manuscript under coauthor review. Preprint URL, DOI and publication metadata to be added after posting."
-  authors:
-    - given-names: "Md Motaleb Hossen"
-      family-names: "Manik"
-    - given-names: "Pingkun"
-      family-names: "Yan"
-    - given-names: "Ge"
-      family-names: "Wang"
-    - given-names: "Anushree"
-      family-names: "Burade"
-    - given-names: "Mannudeep K."
-      family-names: "Kalra"
-    - given-names: "Ana Lucia"
-      family-names: "Guzman Botero"
+  - name: "The medistruct-audit authors"

@@ -1,6 +1,6 @@
 # medistruct-audit
 
-Code and results for the manuscript *Evidence Grounding, Roundtrip Consistency, and Agentic Quality Assurance in Local Clinical Note Structuring*. Md Motaleb Hossen Manik, Pingkun Yan, Ge Wang, Anushree Burade, Mannudeep K. Kalra, Ana Lucia Guzman Botero.
+Code and results for the manuscript *Evidence Grounding, Roundtrip Consistency, and Agentic Quality Assurance in Local Clinical Note Structuring*.
 
 **Status:** manuscript under coauthor review. The preprint link and citation details will be added after posting.
 
